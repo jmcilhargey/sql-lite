@@ -1,0 +1,40 @@
+CREATE TABLE tracks (id INTEGER PRIMARY KEY, title TEXT, album_id INTEGER);
+
+INSERT INTO tracks (id, title, album_id) VALUES (1, "Smooth Criminal", 12);
+INSERT INTO tracks (id, title, album_id) VALUES (2, "Can't Buy Me Love", 1);
+INSERT INTO tracks (id, title, album_id) VALUES (3, "Beat It", 12);
+INSERT INTO tracks (id, title, album_id) VALUES (4, "Money", 11);
+INSERT INTO tracks (id, title, album_id) VALUES (5, "In The Ghetto", 7);
+INSERT INTO tracks (id, title, album_id) VALUES (6, "And I Love Her", 1);
+INSERT INTO tracks (id, title, album_id) VALUES (7, "Rock And Roll Madonna", 9);
+INSERT INTO tracks (id, title, album_id) VALUES (8, "Wearin' That Loved on Look", 7);
+INSERT INTO tracks (id, title, album_id) VALUES (9, "Exile On Main St", 11);
+INSERT INTO tracks (id, title, album_id) VALUES (10, "Your Song", 9);
+
+SELECT 
+	*
+FROM 
+	albums
+JOIN tracks ON
+	albums.id = tracks.album_id;
+
+SELECT
+	*
+FROM
+	albums
+LEFT JOIN artists ON
+	albums.artist_id = artists.id;
+  
+SELECT
+	*
+FROM
+	artists
+LEFT JOIN albums ON
+	artists.id = albums.artist_id;
+  
+SELECT
+	*
+FROM
+	tracks
+JOIN albums ON
+	tracks.album_id = albums.id;
